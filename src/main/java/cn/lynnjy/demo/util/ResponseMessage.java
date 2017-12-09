@@ -34,17 +34,21 @@ public class ResponseMessage {
 
     public static JSONObject list(LocalMoney localMoney){
         JSONObject res = new JSONObject();
+
+        //获取总发红包个数并返回
         int size = localMoney.getSize();
         res.put("size",size);
-
-        //        Iterator iter = localMoney.getList().iterator();
-//
-//        while (iter.hasNext()){
-//
-//            res.put("userGrabs",iter.next());
-//        }
+        //获取已拆红包个数并返回
+        int grabbedSize = localMoney.getGabbedSize();
+        res.put("grabbedSize",grabbedSize);
+        //获取抢到红包微信用户列表并返回
         String GrabsObjects = JSON.toJSONString(localMoney.getList());
         res.put("grabsList",GrabsObjects);
+        //返回发送红包用户
+        res.put("sender",localMoney.getSender());
+        //返回祝福语
+        res.put("wishes",localMoney.getWishes());
+
         res.put("errcode", 200);
         res.put("errmsg", "OK");
         return res;

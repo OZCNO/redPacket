@@ -27,4 +27,7 @@ public class DemoController {
     public String test(@PathVariable("name") String name){
         return name;
     }
+
+
+
 }

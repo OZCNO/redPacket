@@ -14,6 +14,17 @@ public class LuckyMoney {
     private String sender;//发红包的老哥
     private int size;//总人数
     private double money;//总money
+    private String wishes;//红包祝福语
+
+    public String getWishes() {
+        return wishes;
+    }
+
+    public void setWishes(String wishes) {
+        this.wishes = wishes;
+    }
+
+
 
     public String getSender() {
         return sender;

@@ -2,11 +2,25 @@ package cn.lynnjy.demo.model;
 
 import com.alibaba.fastjson.JSON;
 
+
+//抢红包用户user类
 public class User {
 
+    private String id;//packID
+    private String nickname;//微信昵称
+    private String imgUrl;//微信头像
+    private double grabMoney;//抢到的钱
 
-    private String nickname;
-    private double grabMoney;
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+
+
 
     public String getNickname() {
         return nickname;
@@ -24,9 +38,15 @@ public class User {
         this.grabMoney = grabMoney;
     }
 
-    public String toJson(){
 
-        return JSON.toJSONString(this);
+
+    public String getId() {
+        return id;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
 
 }

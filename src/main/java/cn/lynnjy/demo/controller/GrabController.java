@@ -1,5 +1,6 @@
 package cn.lynnjy.demo.controller;
 
+import cn.lynnjy.demo.model.User;
 import cn.lynnjy.demo.service.RedisManage;
 import cn.lynnjy.demo.util.CacheManage;
 import cn.lynnjy.demo.util.ResponseMessage;
@@ -31,13 +32,13 @@ public class GrabController {
 
     /**
      * 抢红包
-     * @param id,nickname
+     * @param
      * @return jsonobj
      */
-    @GetMapping(value = "/receive/get")
-    public JSONObject grab(@RequestParam("id") String id, @RequestParam("nickname") String nickname){
+    @PostMapping(value = "/receive/get")
+    public JSONObject grab(@RequestBody User user){
         //红包id 根据获取到的红包id 取出本地LocalMoney对象并插入ip地址
-        if(CacheManage.addUser(id,nickname)){
+        if(CacheManage.addUser(user.getId(), user.getNickname())){
             return ResponseMessage.ok();
         }else
             return ResponseMessage.error("你来晚了，红包已被抢光！");
@@ -46,12 +47,16 @@ public class GrabController {
 
     /**
      * 拆红包
-     * @param id
+     * @param
      * @return jsonobj
      */
-    @GetMapping(value = "/receive/open")
-    public JSONObject open(@RequestParam("id") String id, @RequestParam("nickname") String nickname){
-        //判断该ip是否在list内
+    @PostMapping(value = "/receive/open")
+    public JSONObject open(@RequestBody User user){
+        String id = user.getId();
+        String nickname = user.getNickname();
+        String imgUrl = user.getImgUrl();
+
+        //判断该用户是否在list内
         if(!CacheManage.checkUser(id,nickname)){
             return ResponseMessage.error("你来晚了，红包已被抢光！");
         }
@@ -61,7 +66,7 @@ public class GrabController {
 //                CacheManage.remove(id);
                 return ResponseMessage.error("红包已被抢完！");
             }
-            CacheManage.addMoney(id,nickname,money);
+            CacheManage.addMoney(id,nickname,money,imgUrl);
             return ResponseMessage.ok(money);
 
         }

@@ -30,8 +30,8 @@ public class CacheManage {
      * @param sender
      * @return localMoney本地缓存对象
      */
-    public static LocalMoney getLocalPack(int size,String sender){
-        LocalMoney localMoney = new LocalMoney(size,sender);
+    public static LocalMoney getLocalPack(int size,String sender,String wishes){
+        LocalMoney localMoney = new LocalMoney(size,sender,wishes);
 //        System.out.println(size);
 
         try{
@@ -76,10 +76,10 @@ public class CacheManage {
         localMoney.delUser(nickname);
     }
 
-    public static void addMoney(String packID,String nickname,double money){
+    public static void addMoney(String packID,String nickname,double money,String imgUrl){
         //从hashmap中取出localMoney对象
         LocalMoney localMoney = datas.get(packID);
-        localMoney.addMoney(nickname,money);
+        localMoney.addMoney(nickname,money,imgUrl);
     }
 
 
