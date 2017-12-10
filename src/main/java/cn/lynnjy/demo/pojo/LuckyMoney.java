@@ -15,6 +15,15 @@ public class LuckyMoney {
     private int size;//总人数
     private double money;//总money
     private String wishes;//红包祝福语
+    private String imgUrl;//头像url
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 
     public String getWishes() {
         return wishes;

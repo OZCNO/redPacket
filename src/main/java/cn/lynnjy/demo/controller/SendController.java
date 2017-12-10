@@ -26,10 +26,11 @@ public class SendController {
         int size = luckyMoney.getSize();
         String sender = luckyMoney.getSender();
         String wishes = luckyMoney.getWishes();
+        String imgUrl = luckyMoney.getImgUrl();
 
 //        System.out.println(luckyMoney.getSize()+" "+luckyMoney.getMoney());
         //建立红包本地缓存
-        LocalMoney localMoney = CacheManage.getLocalPack(size,sender,wishes);
+        LocalMoney localMoney = CacheManage.getLocalPack(size,sender,wishes,imgUrl);
         //存入redis key = (int)本地缓存对象的packid  value = luckyMoney对象
         redisManage.sendLuckyMoney(localMoney.getPackID(),luckyMoney);
         //反馈

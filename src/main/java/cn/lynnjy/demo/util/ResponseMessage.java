@@ -56,6 +56,8 @@ public class ResponseMessage {
         res.put("sender",localMoney.getSender());
         //返回祝福语
         res.put("wishes",localMoney.getWishes());
+        //返回发送时间
+        res.put("sendTime",localMoney.getSendTime());
 
         res.put("errcode", 200);
         res.put("errmsg", "OK");
