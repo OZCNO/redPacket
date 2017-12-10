@@ -124,6 +124,10 @@ public class LocalMoney {
         return nickNameList.size();
     }
 
+    public String getImgUrl(){
+        return imgUrl;
+    }
+
 
 
 

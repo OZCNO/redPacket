@@ -25,7 +25,7 @@ public class GetAllPacksController {
             return ResponseMessage.listAllPackets(packList);
         }
         else
-            return ResponseMessage.ok("当前没有红包，快去发一个吧!");
+            return ResponseMessage.error("当前没有红包，快去发一个吧!");
 
     }
 }

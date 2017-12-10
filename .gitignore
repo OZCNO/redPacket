@@ -9,6 +9,7 @@ target/
 .settings
 .springBeans
 
+
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -22,3 +23,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+
+.pfx
