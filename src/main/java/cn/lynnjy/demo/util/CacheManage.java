@@ -9,6 +9,9 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CacheManage {
     private static ConcurrentHashMap<String, LocalMoney> datas = new ConcurrentHashMap<>();//用静态hashmap来存放本地缓存对象
 
+    public static ConcurrentHashMap<String, LocalMoney> getDatas() {
+        return datas;
+    }
 
     /**
      * 该方法用于获取本地localMoney 最终用于罗列各自抢到的红包

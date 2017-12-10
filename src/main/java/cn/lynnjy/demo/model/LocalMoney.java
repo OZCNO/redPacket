@@ -106,11 +106,11 @@ public class LocalMoney {
         return size;
     }
     /**
-     * 返回已拆红包人数
+     * 返回已抢红包人数
      * @return
      */
-    public int getGabbedSize(){
-        return list.size();
+    public int getGrabbedSize(){
+        return nickNameList.size();
     }
 
 

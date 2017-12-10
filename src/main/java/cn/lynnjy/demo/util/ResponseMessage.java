@@ -25,6 +25,14 @@ public class ResponseMessage {
         return res;
     }
 
+    public static JSONObject listAllPackets(Object data){
+        JSONObject res = new JSONObject();
+        res.put("errcode", 200);
+        res.put("errmsg", "OK");
+        res.put("result", data);
+        return res;
+    }
+
     public static JSONObject error(String message) {
         JSONObject res = new JSONObject();
         res.put("errcode", 500);
@@ -39,11 +47,11 @@ public class ResponseMessage {
         int size = localMoney.getSize();
         res.put("size",size);
         //获取已拆红包个数并返回
-        int grabbedSize = localMoney.getGabbedSize();
+        int grabbedSize = localMoney.getGrabbedSize();
         res.put("grabbedSize",grabbedSize);
         //获取抢到红包微信用户列表并返回
-        String GrabsObjects = JSON.toJSONString(localMoney.getList());
-        res.put("grabsList",GrabsObjects);
+//        String GrabsObjects = JSON.toJSONString(localMoney.getList());
+        res.put("grabsList",localMoney.getList());
         //返回发送红包用户
         res.put("sender",localMoney.getSender());
         //返回祝福语

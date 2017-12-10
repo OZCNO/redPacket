@@ -2,9 +2,13 @@ package cn.lynnjy.demo.util;
 
 
 
+import cn.lynnjy.demo.model.LocalMoney;
 import cn.lynnjy.demo.pojo.LuckyMoney;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * 工具类
@@ -38,6 +42,24 @@ public class Utils {
         luckyMoney.setMoney(remainMoney - money);
         return money;
     }
+
+
+    /**
+     * 获取未完成的红包列表
+     * @return
+     */
+    public static List<LocalMoney> getPackList(){
+        List<LocalMoney> list = new LinkedList<>();
+        for (LocalMoney localMoneys : CacheManage.getDatas().values()){
+            if (localMoneys.getGrabbedSize()<localMoneys.getSize()){
+                list.add(localMoneys);
+            }
+            else
+                continue;
+        }
+        return list;
+    }
+
 
 //    public static void main(String[] args){
 //

@@ -33,7 +33,7 @@ public class SendController {
         //存入redis key = (int)本地缓存对象的packid  value = luckyMoney对象
         redisManage.sendLuckyMoney(localMoney.getPackID(),luckyMoney);
         //反馈
-        return ResponseMessage.ok(localMoney.getPackID());
+        return ResponseMessage.ok();
     }
 
 }

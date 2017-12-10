@@ -9,11 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Iterator;
-import java.util.Map;
 
 @RestController
-public class ListController {
+public class ListUsersController {
     /**
      * 获取已领红包列表
      * @param id
