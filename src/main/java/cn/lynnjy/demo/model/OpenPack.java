@@ -8,10 +8,14 @@ import org.springframework.data.redis.core.RedisOperations;
 import org.springframework.data.redis.core.SessionCallback;
 
 import java.util.List;
+import java.util.Map;
 
 public class OpenPack implements SessionCallback<List<String>>{
-    private double money;
+//    private double money;
     private String packID;
+    private String picUrl;
+//    private double wmoney;
+    private Map resultMap;
 
     /**
      * 传值
@@ -19,6 +23,11 @@ public class OpenPack implements SessionCallback<List<String>>{
      */
     public void setPackID(String id) {
         this.packID = id;
+    }
+
+
+    public void setPicUrl(String picUrl){
+        this.picUrl = picUrl;
     }
 
     @Override
@@ -30,7 +39,16 @@ public class OpenPack implements SessionCallback<List<String>>{
         String savedId = (String)redisOperations.opsForValue().get(packID);
         LuckyMoney lm = JSON.parseObject(savedId,LuckyMoney.class);
         //获取该次随机money
-        money  = Utils.getRandomMoney(lm);
+        resultMap = Utils.getRandomMoney(lm,picUrl);
+//        money = (double)resultMap.get("money");
+//        wmoney = (double)resultMap.get("wmoney");
+
+//        money  = Utils.getRandomMoney(lm,picUrl);
+        //人脸图像识别失败
+        if((int)resultMap.get("code")!=0){
+            return redisOperations.exec();
+        }
+
         //修改redis数据
         redisOperations.multi();
         redisOperations.opsForValue().set(packID,lm.toJson());
@@ -41,9 +59,15 @@ public class OpenPack implements SessionCallback<List<String>>{
     }
 
 
-    public double getMoney(){
-        return money;
+//    public double getMoney(){
+//        return money;
+//    }
+//
+//    public double getWmoney() {
+//        return wmoney;
+//    }
+
+    public Map getResultMap(){
+        return resultMap;
     }
-
-
 }

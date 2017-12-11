@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.util.Map;
 import java.util.concurrent.*;
 
 @Service
@@ -56,8 +57,9 @@ public class RedisManage {
     /**
      * receive
      */
-    public double modifyLuckyMoney(String packID){
+    public Map modifyLuckyMoney(String packID, String picUrl){
         OpenPack op = new OpenPack();
+        op.setPicUrl(picUrl);
         op.setPackID(packID);
 
 
@@ -84,8 +86,13 @@ public class RedisManage {
 
 
 //        CacheManage.delUser(packID,nickname);
-        return op.getMoney();
+//        return op.getMoney();
+//        return op.getWmoney();
+        return op.getResultMap();
     }
+
+
+
 
 
 

@@ -10,6 +10,7 @@ public class User {
     private String nickname;//微信昵称
     private String imgUrl;//微信头像
     private double grabMoney;//抢到的钱
+    private String picUrl;//照片
 
     public String getImgUrl() {
         return imgUrl;
@@ -46,6 +47,15 @@ public class User {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 
 

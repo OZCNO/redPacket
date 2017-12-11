@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 
 import java.lang.reflect.Array;
 import java.util.Iterator;
+import java.util.Map;
 
 /**
  * 响应消息。controller中处理后，返回此对象，响应请求结果给客户端。
@@ -25,10 +26,19 @@ public class ResponseMessage {
         return res;
     }
 
+    public static JSONObject okMap(Map map){
+        JSONObject res = new JSONObject();
+        res.put("errcode", 200);
+        res.put("errmsg", "OK");
+        res.put("result", map);
+        return res;
+    }
+
     public static JSONObject listAllPackets(Object data){
         JSONObject res = new JSONObject();
         res.put("errcode", 200);
         res.put("errmsg", "OK");
+
         res.put("result", data);
         return res;
     }
@@ -39,6 +49,8 @@ public class ResponseMessage {
         res.put("errmsg", message);
         return res;
     }
+
+
 
     public static JSONObject list(LocalMoney localMoney){
         JSONObject res = new JSONObject();
@@ -64,4 +76,14 @@ public class ResponseMessage {
         return res;
 
     }
+
+
+//    public static JSONObject ok(Object data , String str){
+//        JSONObject res = new JSONObject();
+//        res.put("errcode", 200);
+//        res.put("errmsg", "OK");
+//        res.put("result", data);
+//        res.put("str",str);
+//        return res;
+//    }
 }

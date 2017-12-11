@@ -61,8 +61,13 @@ public class LocalMoney {
             System.out.println("添加抢红包用户: "+nickname);
 //            User user = new User();
 //            user.setNickname(nickname);
-            nickNameList.add(nickname);
-            return true;
+            if (!checkUser(nickname)){
+                nickNameList.add(nickname);
+                return true;
+            }
+            else
+                return false;
+
         }else
             return false;
     }

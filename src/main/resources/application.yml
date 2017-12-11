@@ -1,9 +1,9 @@
 ﻿server:
  port: 443
  ssl:
-   key-store: classpath:demo.lynnjy.cn.pfx
-   key-store-password: 834n0o5e4ik
-   key-store-type: PKCS12
+  key-store: classpath:demo.lynnjy.cn.pfx
+  key-store-password: 834n0o5e4ik
+  key-store-type: PKCS12
 spring:
  redis:
    database: 0

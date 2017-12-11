@@ -4,9 +4,12 @@ import cn.lynnjy.demo.model.User;
 import cn.lynnjy.demo.service.RedisManage;
 import cn.lynnjy.demo.util.CacheManage;
 import cn.lynnjy.demo.util.ResponseMessage;
+import cn.lynnjy.demo.util.Utils;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @RestController
 //用于抢红包的控制器
@@ -55,19 +58,28 @@ public class GrabController {
         String id = user.getId();
         String nickname = user.getNickname();
         String imgUrl = user.getImgUrl();
+        String picUrl = user.getPicUrl();
 
         //判断该用户是否在list内
         if(!CacheManage.checkUser(id,nickname)){
             return ResponseMessage.error("你来晚了，红包已被抢光！");
         }
         else {
-            double money = redisManage.modifyLuckyMoney(id);
-            if (money == 0.0){
+//            double money = redisManage.modifyLuckyMoney(id);
+            Map resultMap = redisManage.modifyLuckyMoney(id,picUrl);
+
+            //人脸识别失败 返回500
+            if((int)resultMap.get("code")!=0)
+                return ResponseMessage.error("人脸识别失败！");
+
+            double wmoney = (double)resultMap.get("wmoney");
+            if (wmoney == 0.0)
 //                CacheManage.remove(id);
                 return ResponseMessage.error("红包已被抢完！");
-            }
-            CacheManage.addMoney(id,nickname,money,imgUrl);
-            return ResponseMessage.ok(money);
+
+
+            CacheManage.addMoney(id,nickname,wmoney,imgUrl);
+            return ResponseMessage.okMap(Utils.getStr(resultMap));
 
         }
     }
