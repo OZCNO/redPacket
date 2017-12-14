@@ -127,7 +127,7 @@ public class Utils {
      * @return
      */
     public static List<LocalMoney> getPackList(){
-        List<LocalMoney> list = new LinkedList<>();
+        List<LocalMoney> list = new ArrayList<>();
         for (LocalMoney localMoneys : CacheManage.getDatas().values()){
             if (localMoneys.getGrabbedSize()<localMoneys.getSize()){
                 list.add(localMoneys);
@@ -135,6 +135,13 @@ public class Utils {
             else
                 continue;
         }
+        //排序
+        Collections.sort(list, new Comparator<LocalMoney>(){
+            @Override
+            public int compare(LocalMoney lm1, LocalMoney lm2) {
+                return lm2.getSendTime().compareTo(lm1.getSendTime());
+            }
+        });
         return list;
     }
 
