@@ -61,6 +61,8 @@ public class CacheManage {
 
     }
 
+
+
     /**
      * 该方法用于ip对比 同一个ip只能领一次
      * @return  boolean
@@ -94,6 +96,7 @@ public class CacheManage {
             datas.remove(packID);
         }
     }
+
 
 
 

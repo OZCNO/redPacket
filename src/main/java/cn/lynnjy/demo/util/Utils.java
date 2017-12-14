@@ -146,7 +146,11 @@ public class Utils {
     }
 
 
-
+    /**
+     * 获取文案
+     * @param resultMap
+     * @return
+     */
     public static Map getStr(Map resultMap){
 
         String str1 = "";

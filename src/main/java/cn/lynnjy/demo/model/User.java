@@ -11,6 +11,24 @@ public class User {
     private String imgUrl;//微信头像
     private double grabMoney;//抢到的钱
     private String picUrl;//照片
+//    private int happy;//笑容
+//    private int beauty;//颜值
+//
+//    public int getHappy() {
+//        return happy;
+//    }
+//
+//    public void setHappy(int happy) {
+//        this.happy = happy;
+//    }
+//
+//    public int getBeauty() {
+//        return beauty;
+//    }
+//
+//    public void setBeauty(int beauty) {
+//        this.beauty = beauty;
+//    }
 
     public String getImgUrl() {
         return imgUrl;
