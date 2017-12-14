@@ -44,7 +44,7 @@ public class GrabController {
         if(CacheManage.addUser(user.getId(), user.getNickname())){
             return ResponseMessage.ok();
         }
-        if(CacheManage.checkUser(id," "+user.getNickname())){
+        if(CacheManage.checkUser(user.getId()," "+user.getNickname())){
             return ResponseMessage.error("已抢过该红包");
         }
         else
