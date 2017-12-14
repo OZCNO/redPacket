@@ -19,7 +19,7 @@ public class RedisManage {
     private StringRedisTemplate StringRedisTemplate;
     private ExecutorService pool;
 
-    private static  long timeOut = 1;//timeout 为 1天
+    private static long timeOut = 1;//timeout 为 1天
 
 
     /**

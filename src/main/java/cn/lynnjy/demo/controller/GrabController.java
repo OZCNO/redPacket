@@ -64,6 +64,9 @@ public class GrabController {
         if(!CacheManage.checkUser(id,nickname)){
             return ResponseMessage.error("你来晚了，红包已被抢光！");
         }
+        if(!CacheManage.checkUser(id," "+nickname)){
+            return ResponseMessage.error("已抢过该红包");
+        }
         else {
 //            double money = redisManage.modifyLuckyMoney(id);
             Map resultMap = redisManage.modifyLuckyMoney(id,picUrl);

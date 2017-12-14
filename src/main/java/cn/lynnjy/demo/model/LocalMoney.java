@@ -82,6 +82,10 @@ public class LocalMoney {
     public boolean addMoney(String nickname,Double money,String imgUrl){
 
         if (checkUser(nickname)){
+            //加入一个小修改 禁止重复拆红包
+            int index = nickNameList.indexOf(nickname);
+            nickNameList.set(index, " "+nickname);
+
             User user = new User();
             user.setNickname(nickname);
             user.setGrabMoney(money);

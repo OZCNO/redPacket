@@ -53,7 +53,7 @@ public class ResponseMessage {
 
 
     public static JSONObject list(LocalMoney localMoney){
-        JSONObject res = new JSONObject();
+        JSONObject res = new JSONObject(true);
 
         //获取总发红包个数并返回
         int size = localMoney.getSize();

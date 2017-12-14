@@ -195,7 +195,7 @@ public class Utils {
             case "malea":str1="小仙男说的就是你啦！";break;
             case "maleb":str1="年轻人，你且站在这里不要动，我去给你买几个橘子。";break;
             case "malec":str1="你在男人最黄金的年龄段。";break;
-            case "maled":str1="年龄不是问题！";break;
+            case "maled":str1="大伯，年龄不是问题！";break;
             case "malee":str1="老爷爷，笑一笑十年少！";break;
             case "femalea":str1="正处青春年华，如春花初放，似莲之清纯。";break;
             case "femaleb":str1="正处成熟的时期，如玉兰般优雅，风姿绰约。";break;
@@ -215,7 +215,7 @@ public class Utils {
             case "a":str3="人见人哀，花见花败，车见车爆胎。";break;
             case "b":if (sex_rank.equals("female"))str3="你很美，只是美的不够具体。";else str3="只是在人群中多看了你一眼，仅此而已";break;
             case "c":str3="就算没有沉鱼落雁之容，中人之姿总是有的";break;
-            case "d":str3="三百六十度无死角的仰慕，简直帅绝人寰";break;
+            case "d":if (sex_rank.equals("female"))str3="人见人爱，花见花开，阳光为你绽放。";else str3="三百六十度无死角的仰慕，简直帅绝人寰";break;
         }
 
         resultMap.put("sexAndAge_rank",str1);
