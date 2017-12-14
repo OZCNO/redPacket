@@ -44,11 +44,15 @@ public class GrabController {
         if(CacheManage.addUser(user.getId(), user.getNickname())){
             return ResponseMessage.ok();
         }
+        else if(CacheManage.checkUser(user.getId(),user.getNickname())){
+            return ResponseMessage.ok();
+        }
+
         if(CacheManage.checkUser(user.getId()," "+user.getNickname())){
-            return ResponseMessage.error("已抢过该红包");
+            return ResponseMessage.error("501");//已抢过
         }
         else
-            return ResponseMessage.error("你来晚了，红包已被抢光！");
+            return ResponseMessage.error("502");//被抢光
     }
 
 
@@ -85,7 +89,7 @@ public class GrabController {
                 return ResponseMessage.error("红包已被抢完！");
 
 
-            CacheManage.addMoney(id,nickname,wmoney,imgUrl);
+            CacheManage.addMoney(id,nickname,wmoney,imgUrl,(int)resultMap.get("happy"),(int)resultMap.get("beauty"));
             return ResponseMessage.okMap(Utils.getStr(resultMap));
 
         }

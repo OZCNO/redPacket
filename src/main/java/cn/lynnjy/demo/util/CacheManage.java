@@ -81,10 +81,10 @@ public class CacheManage {
         localMoney.delUser(nickname);
     }
 
-    public static void addMoney(String packID,String nickname,double money,String imgUrl){
+    public static void addMoney(String packID,String nickname,double money,String imgUrl,int happy,int beauty){
         //从hashmap中取出localMoney对象
         LocalMoney localMoney = datas.get(packID);
-        localMoney.addMoney(nickname,money,imgUrl);
+        localMoney.addMoney(nickname,money,imgUrl,happy,beauty);
     }
 
 

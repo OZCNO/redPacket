@@ -61,7 +61,7 @@ public class LocalMoney {
             System.out.println("添加抢红包用户: "+nickname);
 //            User user = new User();
 //            user.setNickname(nickname);
-            if (!checkUser(nickname)){
+            if (!checkUser(nickname) && !checkUser(" "+nickname)){
                 nickNameList.add(nickname);
                 return true;
             }
@@ -79,7 +79,7 @@ public class LocalMoney {
      * @param money
      * @return
      */
-    public boolean addMoney(String nickname,Double money,String imgUrl){
+    public boolean addMoney(String nickname,Double money,String imgUrl,int happy,int beauty){
 
         if (checkUser(nickname)){
             //加入一个小修改 禁止重复拆红包
@@ -90,6 +90,8 @@ public class LocalMoney {
             user.setNickname(nickname);
             user.setGrabMoney(money);
             user.setImgUrl(imgUrl);
+            user.setHappy(happy);
+            user.setBeauty(beauty);
             //插入
             list.add(user);
             System.out.println("用户: "+nickname+" 拆开红包获得: "+money+"元");
