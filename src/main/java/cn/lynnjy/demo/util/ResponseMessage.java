@@ -70,7 +70,8 @@ public class ResponseMessage {
         res.put("wishes",localMoney.getWishes());
         //返回发送时间
         res.put("sendTime",localMoney.getSendTime());
-
+        //返回总金额
+        res.put("money",localMoney.getMoney());
         res.put("errcode", 200);
         res.put("errmsg", "OK");
         return res;

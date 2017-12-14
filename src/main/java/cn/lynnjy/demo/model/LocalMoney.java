@@ -14,6 +14,9 @@ public class LocalMoney {
     private String wishes;//红包祝福语
     private String sendTime;//红包发送时间
     private String imgUrl;//发送者头像
+    private double money;//总金额
+
+
 
     public String getSendTime() {
         return sendTime;
@@ -32,13 +35,14 @@ public class LocalMoney {
      * @param size
      * @param sender
      */
-    public LocalMoney(int size,String sender,String wishes,String imgUrl) {
+    public LocalMoney(int size,String sender,String wishes,String imgUrl,double money) {
         //        userGrabs = new HashMap<>();
         this.imgUrl = imgUrl;
         this.size = size;
         nickNameList = new LinkedList<>();
         list = new LinkedList<>();
         this.sender = sender;
+        this.money = money;
         this.wishes = wishes;
         packID = UUID.randomUUID().toString();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -139,6 +143,9 @@ public class LocalMoney {
         return imgUrl;
     }
 
+    public double getMoney() {
+        return money;
+    }
 
 
 

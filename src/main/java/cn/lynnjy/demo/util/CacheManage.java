@@ -33,8 +33,8 @@ public class CacheManage {
      * @param sender
      * @return localMoney本地缓存对象
      */
-    public static LocalMoney getLocalPack(int size,String sender,String wishes,String imgUrl){
-        LocalMoney localMoney = new LocalMoney(size,sender,wishes,imgUrl);
+    public static LocalMoney getLocalPack(int size,String sender,String wishes,String imgUrl,double money){
+        LocalMoney localMoney = new LocalMoney(size,sender,wishes,imgUrl,money);
 //        System.out.println(size);
 
         try{
