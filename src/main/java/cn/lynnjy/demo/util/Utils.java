@@ -186,7 +186,7 @@ public class Utils {
 
 
         for(int i=0;i<4;i++){
-            if(happy < (i+1)*25) {
+            if(happy < (i+1)*25+1) {
                 happy_rank = rank[i];
                 break;
             }
