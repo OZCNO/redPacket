@@ -35,7 +35,7 @@ public class ResponseMessage {
     }
 
     public static JSONObject listAllPackets(Object data){
-        JSONObject res = new JSONObject();
+        JSONObject res = new JSONObject(true);
         res.put("errcode", 200);
         res.put("errmsg", "OK");
 
