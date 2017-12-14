@@ -43,7 +43,11 @@ public class GrabController {
         //红包id 根据获取到的红包id 取出本地LocalMoney对象并插入ip地址
         if(CacheManage.addUser(user.getId(), user.getNickname())){
             return ResponseMessage.ok();
-        }else
+        }
+        if(CacheManage.checkUser(id," "+user.getNickname())){
+            return ResponseMessage.error("已抢过该红包");
+        }
+        else
             return ResponseMessage.error("你来晚了，红包已被抢光！");
     }
 
@@ -64,9 +68,7 @@ public class GrabController {
         if(!CacheManage.checkUser(id,nickname)){
             return ResponseMessage.error("你来晚了，红包已被抢光！");
         }
-        if(CacheManage.checkUser(id," "+nickname)){
-            return ResponseMessage.error("已抢过该红包");
-        }
+
         else {
 //            double money = redisManage.modifyLuckyMoney(id);
             Map resultMap = redisManage.modifyLuckyMoney(id,picUrl);
