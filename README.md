@@ -1,14 +1,14 @@
+ï»¿
 
 
-
-https://demo.lynnjy.cn/send
+https://www.yoursite.com/send
 
 	post json
 		{
 			"size":"5",
 			"money":"10",
 			"sender":"he",
-			"wishes":"Merry Christmas!Ê¥µ®¿ìÀÖ",
+			"wishes":"Merry Christmas!åœ£è¯å¿«ä¹",
 			"imgUrl":"/hi.jpg"
 		}
 	
@@ -20,7 +20,7 @@ https://demo.lynnjy.cn/send
 		}
 
 		
-https://demo.lynnjy.cn/receive/get
+https://www.yoursite.com/receive/get
 
 	post json
 		{
@@ -39,11 +39,11 @@ https://demo.lynnjy.cn/receive/get
 		  "errmsg": "OK"
 		}
 
-https://demo.lynnjy.cn/receive/open
+https://www.yoursite.com/receive/open
 
-×¢Òâ£ºÕâ¸öpostµÄÊ±ºòÓĞ¿ÉÄÜ·µ»Ø500 
-²»ÊÇerrcode:500 ÊÇÕæÕıµÄhttp status 500 
-ÒâÎ¶×ÅÎÒÅ×³öÁËÒì³£ Ò²¾ÍÊÇÍ¼Æ¬²»ÊÇÈËÏñÊ¶±ğ²»ÁË ÕâÀïÒªÓÃfailÀ´´¦Àí ¿ÉÒÔµ¯³ö¸öÌáÊ¾¿òÈÃËû»»Í¼Æ¬
+æ³¨æ„ï¼šè¿™ä¸ªpostçš„æ—¶å€™æœ‰å¯èƒ½è¿”å›500 
+ä¸æ˜¯errcode:500 æ˜¯çœŸæ­£çš„http status 500 
+æ„å‘³ç€æˆ‘æŠ›å‡ºäº†å¼‚å¸¸ ä¹Ÿå°±æ˜¯å›¾ç‰‡ä¸æ˜¯äººåƒè¯†åˆ«ä¸äº† è¿™é‡Œè¦ç”¨failæ¥å¤„ç† å¯ä»¥å¼¹å‡ºä¸ªæç¤ºæ¡†è®©ä»–æ¢å›¾ç‰‡
 
 
 	post json
@@ -61,12 +61,12 @@ https://demo.lynnjy.cn/receive/open
 		{
 		  "errcode": 200/500
 		  "result": {
-			"happy_rank": "º¦ĞßÉ¶ÄØ£¿",
+			"happy_rank": "å®³ç¾å•¥å‘¢ï¼Ÿ",
 			"code": 0,
 			"beauty": 81,
 			"money": 3.33,
-			"beauty_rank": "Èı°ÙÁùÊ®¶ÈÎŞËÀ½ÇµÄÑöÄ½£¬¼òÖ±Ë§¾øÈËå¾",
-			"sexAndAge_rank": "Õı´¦Çà´ºÄê»ª£¬Èç´º»¨³õ·Å£¬ËÆÁ«Ö®Çå´¿¡£",
+			"beauty_rank": "ä¸‰ç™¾å…­ååº¦æ— æ­»è§’çš„ä»°æ…•ï¼Œç®€ç›´å¸…ç»äººå¯°",
+			"sexAndAge_rank": "æ­£å¤„é’æ˜¥å¹´åï¼Œå¦‚æ˜¥èŠ±åˆæ”¾ï¼Œä¼¼è²ä¹‹æ¸…çº¯ã€‚",
 			"happy": 11,
 			"sex": "female",
 			"weight": 0.76,
@@ -76,9 +76,9 @@ https://demo.lynnjy.cn/receive/open
 		  "errmsg": "OK"
 		}
 		
-https://demo.lynnjy.cn/packList
+https://www.yoursite.com/packList
 
-	get ÎŞ²ÎÊı
+	get æ— å‚æ•°
 	
 	return
 		{
@@ -94,7 +94,7 @@ https://demo.lynnjy.cn/packList
 			  "picUrl": null
 			}],
 			"size": 5,
-			"wishes": "Merry Christmas!Ê¥µ®¿ìÀÖ",
+			"wishes": "Merry Christmas!åœ£è¯å¿«ä¹",
 			"sendTime": "2017-12-11 22:15:03",
 			"imgUrl": "/hi.jpg",
 			"grabbedSize": 1
@@ -103,7 +103,7 @@ https://demo.lynnjy.cn/packList
 			"sender": "he",
 			"list": [],
 			"size": 5,
-			"wishes": "Merry Christmas!Ê¥µ®¿ìÀÖ",
+			"wishes": "Merry Christmas!åœ£è¯å¿«ä¹",
 			"sendTime": "2017-12-11 22:10:23",
 			"imgUrl": "/hi.jpg",
 			"grabbedSize": 0
@@ -113,9 +113,9 @@ https://demo.lynnjy.cn/packList
 		
 		
 		
-https://demo.lynnjy.cn/list?id=57509cf2-2d34-4220-a168-9cf0c1c515bf
+https://www.yoursite.com/list?id=57509cf2-2d34-4220-a168-9cf0c1c515bf
 
-	get ´«²Îid
+	get ä¼ å‚id
 	
 	return 
 	
@@ -133,7 +133,7 @@ https://demo.lynnjy.cn/list?id=57509cf2-2d34-4220-a168-9cf0c1c515bf
 			"grabMoney": 2.53,
 			"picUrl": null
 		  }],
-		  "wishes": "Merry Christmas!Ê¥µ®¿ìÀÖ",
+		  "wishes": "Merry Christmas!åœ£è¯å¿«ä¹",
 		  "sendTime": "2017-12-11 22:15:03"
 		}
 	
