@@ -41,9 +41,7 @@ https://www.yoursite.com/receive/get
 
 https://www.yoursite.com/receive/open
 
-注意：这个post的时候有可能返回500 
-不是errcode:500 是真正的http status 500 
-意味着我抛出了异常 也就是图片不是人像识别不了 这里要用fail来处理 可以弹出个提示框让他换图片
+
 
 
 	post json
